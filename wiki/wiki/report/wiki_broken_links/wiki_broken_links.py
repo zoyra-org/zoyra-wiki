@@ -85,7 +85,7 @@ def get_broken_links(
 	for el in links:
 		url = el.attrs.get("href") or el.attrs.get("src")
 
-		if is_hash_link(url):
+		if not url or is_hash_link(url):
 			continue
 
 		is_relative = is_relative_url(url)
